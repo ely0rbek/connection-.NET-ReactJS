@@ -25,15 +25,9 @@ const Main = () => {
     }
 
     const onUpdate=(element)=>{
-        // <EditProduct 
-        // defTitle={element.productTitle} 
-        // defName={element.productManufacturerName} 
-        // defPrice={element.productUnitPrice}
-        // defComment={element.productComment}
-        // />
         setObj(element)
         setUpdate(true)
-        console.log(element);
+        // console.log(element);
     }
     if(isUpdated){
         return(
@@ -43,8 +37,10 @@ const Main = () => {
             defPrice={newObj.productUnitPrice}
             defComment={newObj.productComment}
             id={newObj.id}
+            setUpdate={setUpdate}
             />
         )
+        
     }
     else{
         return (

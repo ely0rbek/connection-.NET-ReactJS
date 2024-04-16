@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Input from './input'
 
-const EditProduct = ({defTitle,defName,defPrice,defComment,id}) => {
+const EditProduct = ({defTitle,defName,defPrice,defComment,id,setUpdate}) => {
     const [title, setTitle] = useState(defTitle)
     const [manName, setmanName] = useState(defName)
     const [price, setPrice] = useState(defPrice)
     const [comment, setComment] = useState(defComment)
 
-    const onUpdateData=()=>{
+    const onUpdateData= e=>{
+        e.preventDefault()
         const newObj = {
             productTitle: title,
             productManufacturerName: manName,
@@ -19,10 +20,11 @@ const EditProduct = ({defTitle,defName,defPrice,defComment,id}) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newObj)
         };
-        console.log("salom");
+        // console.log(newObj);
         fetch(`https://localhost:7111/api/cProduct/UpdateProductById?productId=${id}`, requestOptions)
             .then(response => response.json())
             .then(data => console.log(data));
+        setUpdate(false)
     }
     return (
         <form className="form-signin w-25 m-auto">
