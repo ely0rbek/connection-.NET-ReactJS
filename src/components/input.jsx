@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Input = ({ label, state, setState,id}) => {
+const Input = ({ type='text', label, state, setState,id}) => {
     return (
         <>
-            <input type="text" 
+            <input type={type}
             id={id}
             className="form-control mt-2 p-3" 
             placeholder={label} 

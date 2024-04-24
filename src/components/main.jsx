@@ -40,7 +40,6 @@ const Main = () => {
             setUpdate={setUpdate}
             />
         )
-        
     }
     else{
         return (
