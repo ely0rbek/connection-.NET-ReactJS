@@ -9,6 +9,7 @@ import Admin from './components/admin';
 import Student from './components/student';
 // import FileInputExample from './components/ehhe';
 import Error from './layouts/error'
+import First from './components/first';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           <Route element={<Error />} path='/error' /> */}
         </Route>
         <Route path='/student' element={<Student />} />
+        <Route path='/first' element={<First />} />
         <Route path='/addProduct' element={<AddProduct />} />
         <Route path='/editProduct' element={<EditProduct />} />
         <Route  path='/login' element={<Login />}/>
